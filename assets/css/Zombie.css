@@ -1,0 +1,13 @@
+body>div:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 30vw;
+    width: max-content;
+    height: max-content;
+}
+
+body>div:nth-child(2)>img{
+    left: 30vw;
+    width: 80px;
+    height: 115px;
+}

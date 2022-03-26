@@ -4,53 +4,12 @@
     <meta charset="UTF-8">
     <title>Shooting_Game</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
-
-    <style>
-
-        body{
-            overflow: hidden;
-        }
+    <link rel="stylesheet" href="assets/css/Zombie.css">
+    <link rel="stylesheet" href="assets/css/Rocket.css">
+    <link rel="stylesheet" href="assets/css/Body.css">
 
 
-    body>img{
-      width: 100vw;
-        height: 100vh;
-        position: absolute;
-    }
 
-
-    body>div:nth-child(2){
-        position: absolute;
-        top: 0;
-        left: 30vw;
-        width: 20px;
-        height: 20px;
-    }
-
-    body>div:nth-child(2)>img{
-        left: 30vw;
-        width: 80px;
-        height: 115px;
-    }
-
-
-    body>div:nth-child(3){
-        position: absolute;
-        bottom: 13vh;
-        left: 30vw;
-        width: 20px;
-        height: 20px;
-    }
-
-
-    body>div:nth-child(3)>img{
-        left: 30vw;
-        width: 120px;
-        height: 100px;
-    }
-
-
-    </style>
 
 </head>
 
@@ -60,16 +19,19 @@
 
 
 <!-----Zombie section----->
-<div>
+<div >
     <img src="assets/images/zombie1.png" alt="">
 </div>
 
 
-<!-----Army tank section----->
-<div>
-    <img src="assets/images/rocket1.png" alt="">
+<!-----Rocket section----->
+<div id="rocket">
+    <img id="rocketImg" src="assets/images/rocket1.png" alt="">
 </div>
 
+
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script src="assets/JS/Rocket.js"></script>
 
 </body>
 </html>
