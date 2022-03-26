@@ -4,10 +4,27 @@ body>div:nth-child(2){
     left: 30vw;
     width: max-content;
     height: max-content;
+
+
+    animation-name: zombie;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
 }
 
 body>div:nth-child(2)>img{
     left: 30vw;
     width: 80px;
     height: 115px;
+
+}
+
+
+@keyframes zombie {
+    0%{
+        top: 0;
+    }
+
+    100%{
+        top: 85vh;
+    }
 }

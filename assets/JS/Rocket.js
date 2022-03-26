@@ -12,14 +12,11 @@ $(document).keydown(function (e){
 
 
         case 39:
-            if (p.right > 0){
+            if (p.left <= 1430){
                 $("#rocket").css('left', p.left + 15 + 'px');
             }
-            break;
 
     }
-
-
 
 });
 
