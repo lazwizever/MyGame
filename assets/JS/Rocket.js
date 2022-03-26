@@ -36,6 +36,8 @@ $(document).keydown(function (e){
 
     if (e.keyCode === 32){
         $("#bullet").css("display","block");
+        $("#bullet").css('top', p.top - 50 + 'px');
+
     }
 
 });
