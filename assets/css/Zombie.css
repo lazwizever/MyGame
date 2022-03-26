@@ -1,7 +1,7 @@
 body>div:nth-child(2){
     position: absolute;
     top: 0;
-    left: 30vw;
+    left: 10vw;
     width: max-content;
     height: max-content;
 
@@ -12,12 +12,31 @@ body>div:nth-child(2){
 }
 
 body>div:nth-child(2)>img{
-    left: 30vw;
+    left: 10vw;
     width: 80px;
     height: 115px;
 
 }
 
+
+/*--------Select all Zombies-------------*/
+.zmb{
+    position: absolute;
+    top: 0;
+    width: max-content;
+    height: max-content;
+
+    animation-name: zombie;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+
+.zmb>img{
+    width: 80px;
+    height: 115px;
+}
+
+/*-----------------------------------*/
 
 @keyframes zombie {
     0%{
@@ -26,5 +45,46 @@ body>div:nth-child(2)>img{
 
     100%{
         top: 85vh;
+
     }
 }
+
+
+body>div:nth-child(3){
+    top: 0;
+    left: 26vw;
+    animation-delay: 3s;
+    display: none;
+}
+
+body>div:nth-child(4){
+    top: 0;
+    left: 40vw;
+    animation-delay: 1s;
+}
+
+body>div:nth-child(5){
+    top: 0;
+    left: 66vw;
+    animation-delay: 12s;
+}
+
+body>div:nth-child(6){
+    top: 0;
+    left: 78vw;
+    animation-delay: 4s;
+}
+
+body>div:nth-child(7){
+    top: 0;
+    left: 83vw;
+    animation-delay: 7s;
+}
+
+
+body>div:nth-child(8){
+    top: 0;
+    left: 90vw;
+    animation-delay: 8s;
+}
+

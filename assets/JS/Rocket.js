@@ -1,3 +1,7 @@
+$("#bullet").css("display","none");
+
+/*-----------------Move rocket from left-right , right-left----------------*/
+
 $(document).keydown(function (e){
 
     var p = $("#rocket").position();
@@ -20,5 +24,19 @@ $(document).keydown(function (e){
 
 });
 
+/*---------------------------------------------------------------------------*/
 
 
+
+/*------------------------Moving bullets-------------------------------*/
+
+$(document).keydown(function (e){
+
+    var p = $("#rocket").position();
+
+    if (e.keyCode === 32){
+        $("#bullet").css("display","block");
+    }
+
+});
+/*----------------------------------------------------------------------*/
