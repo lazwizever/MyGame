@@ -8,14 +8,15 @@ $(document).keydown(function (e){
 
     switch (e.keyCode){
 
-        case 37:
+        case 37:    // move left
             if (p.left > 0){
                 $("#rocket").css('left', p.left - 15 + 'px');
+                $("#bullet").css('left', p.left - 15 + 'px');
             }
             break;
 
 
-        case 39:
+        case 39:   // move right
             if (p.left <= 1430){
                 $("#rocket").css('left', p.left + 15 + 'px');
             }
@@ -28,7 +29,7 @@ $(document).keydown(function (e){
 
 
 
-/*------------------------Moving bullets-------------------------------*/
+/*------------------------Moving towards bullets-------------------------------*/
 
 $(document).keydown(function (e){
 
@@ -42,3 +43,14 @@ $(document).keydown(function (e){
 
 });
 /*----------------------------------------------------------------------*/
+
+
+$(document).keypress(function (e){
+    if (e.keyCode === 13){
+        $("#bullet").css('left', p.left - 15 + 'px');
+    }else {
+        $("#bullet").css('left', p.left - 15 + 'px');
+    }
+
+
+});
