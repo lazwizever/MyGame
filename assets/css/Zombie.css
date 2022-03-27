@@ -75,16 +75,3 @@ body>div:nth-child(6){
     animation-delay: 4s;
 }
 
-body>div:nth-child(7){
-    top: 0;
-    left: 83vw;
-    animation-delay: 7s;
-}
-
-
-body>div:nth-child(8){
-    top: 0;
-    left: 90vw;
-    animation-delay: 8s;
-}
-

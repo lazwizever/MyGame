@@ -1,0 +1,23 @@
+#bullet{
+    position: absolute;
+    width: 8px;
+    left: 28vw;
+    height: 22px;
+    bottom: 10vh;
+    margin: auto;
+    background-color: #d35400;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    animation-name: moveBullet;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-direction: normal;
+}
+
+@keyframes moveBullet {
+    to {
+        bottom: 180vh;
+        transform: translateY(+100%);
+    }
+}

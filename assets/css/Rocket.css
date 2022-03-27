@@ -15,15 +15,7 @@
 
 }
 
-#bullet{
-    position: absolute;
-    width: 8px;
-    height: 22px;
-    bottom: 20vh;
-    background-color: #d35400;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
+
 
 
 
