@@ -10,6 +10,7 @@ $(document).keydown(function (e){
 
         case 37:    // move left
             if (p.left > 0){
+
                 $("#rocket").css('left', p.left - 15 + 'px');
                 $("#bullet").css('left', p.left - 15 + 'px');
             }
@@ -19,8 +20,9 @@ $(document).keydown(function (e){
         case 39:   // move right
             if (p.left <= 1430){
                 $("#rocket").css('left', p.left + 15 + 'px');
+                $("#bullet").css('left', p.left - 15 + 'px');
             }
-
+            break;
     }
 
 });
@@ -31,26 +33,26 @@ $(document).keydown(function (e){
 
 /*------------------------Moving towards bullets-------------------------------*/
 
-$(document).keydown(function (e){
-
-    var p = $("#rocket").position();
-
+/*$(document).keydown(function (e){
     if (e.keyCode === 32){
         $("#bullet").css("display","block");
-        /*$("#bullet").css('top', p.top - 50 + 'px');*/
+
+        /!*$("#bullet").css('top', p.top - 50 + 'px');*!/
 
     }
 
-});
-/*----------------------------------------------------------------------*/
+});*/
 
 
 $(document).keypress(function (e){
-    if (e.keyCode === 13){
-        $("#bullet").css('left', p.left - 15 + 'px');
+    if (e.keyCode !== 12 && e.keyCode === 32 ){
+        $("#bullet").css("display","block");
+
     }else {
-        $("#bullet").css('left', p.left - 15 + 'px');
+        $("#bullet").css("display","none");
     }
 
-
 });
+
+
+/*----------------------------------------------------------------------*/
