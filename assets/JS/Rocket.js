@@ -44,11 +44,26 @@ $(document).keydown(function (e){
 });*/
 
 
+function loppingBullets(){
+
+}
+
+
+
 $(document).keypress(function (e){
+
+    var p = $("#bullet").position();
+    var pb = p.pageX + $("#rocket").width/2;
+
+    console.log(pb);
+
     if (e.keyCode !== 12 && e.keyCode === 32 ){
         $("#bullet").css("display","block");
+        $("#bullet").css('top', p.top - 40 + 'px');
+       /* movingBullets();*/
 
     }else {
+        console.log("vvvv");
         $("#bullet").css("display","none");
     }
 
@@ -56,3 +71,34 @@ $(document).keypress(function (e){
 
 
 /*----------------------------------------------------------------------*/
+
+function movingBullets(){
+
+    var position = 0;
+
+   setInterval(function (){
+       position += 1;
+       $("#bullet").style.top = position + "px";
+
+
+   },10);
+
+
+
+
+
+
+}
+
+/*function fire() {
+    $("body").append($("<div>").addClass("bullet").css("left", 0));
+}
+$("input").click(fire);
+
+function update() {
+    $(".bullet").each(function() {
+        var oldLeft = $(this).offset().left;
+        $(this).css("left", oldLeft + 10 + "px");
+    });
+}
+setInterval(update, 100);*/
