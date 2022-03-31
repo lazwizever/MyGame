@@ -1,104 +1,41 @@
-$("#bullet").css("display","none");
-
-/*-----------------Move rocket from left-right , right-left----------------*/
+/*-----------------Move rocket from left-right , right-left and moving bullets----------------*/
 
 $(document).keydown(function (e){
 
     var p = $("#rocket").position();
 
-    switch (e.keyCode){
+    if (e.keyCode === 37 && p.left > 0){
+        $("#rocket").css('left', p.left - 15 + 'px');
 
-        case 37:    // move left
-            if (p.left > 0){
-
-                $("#rocket").css('left', p.left - 15 + 'px');
-                $("#bullet").css('left', p.left - 15 + 'px');
-            }
-            break;
-
-
-        case 39:   // move right
-            if (p.left <= 1430){
-                $("#rocket").css('left', p.left + 15 + 'px');
-                $("#bullet").css('left', p.left - 15 + 'px');
-            }
-            break;
     }
 
-});
+    if (e.keyCode === 39 && p.left <= 1430){
+        $("#rocket").css('left', p.left + 15 + 'px');
 
-/*---------------------------------------------------------------------------*/
+    }
 
 
 
-/*------------------------Moving towards bullets-------------------------------*/
+    /*-----------------Moving Bullets-------------------*/
 
-/*$(document).keydown(function (e){
     if (e.keyCode === 32){
-        $("#bullet").css("display","block");
 
-        /!*$("#bullet").css('top', p.top - 50 + 'px');*!/
+        var bullet = document.createElement("section");
+        bullet.classList.add("bullet");
+        $("body").append(bullet);
+
+        setInterval(() => {
+
+            var bulletBottom = parseInt(window.getComputedStyle(bullet).getPropertyValue("bottom"));
+
+            bullet.style.left = p.left + 50 + "px";       //bullet should always be placed at the top of jet..!
+            bullet.style.bottom = bulletBottom + 10 + "px";
+
+        });
 
     }
 
-});*/
 
-
-function loppingBullets(){
-
-}
-
-
-
-$(document).keypress(function (e){
-
-    var p = $("#bullet").position();
-    var pb = p.pageX + $("#rocket").width/2;
-
-    console.log(pb);
-
-    if (e.keyCode !== 12 && e.keyCode === 32 ){
-        $("#bullet").css("display","block");
-        $("#bullet").css('top', p.top - 40 + 'px');
-       /* movingBullets();*/
-
-    }else {
-        console.log("vvvv");
-        $("#bullet").css("display","none");
-    }
 
 });
 
-
-/*----------------------------------------------------------------------*/
-
-function movingBullets(){
-
-    var position = 0;
-
-   setInterval(function (){
-       position += 1;
-       $("#bullet").style.top = position + "px";
-
-
-   },10);
-
-
-
-
-
-
-}
-
-/*function fire() {
-    $("body").append($("<div>").addClass("bullet").css("left", 0));
-}
-$("input").click(fire);
-
-function update() {
-    $(".bullet").each(function() {
-        var oldLeft = $(this).offset().left;
-        $(this).css("left", oldLeft + 10 + "px");
-    });
-}
-setInterval(update, 100);*/

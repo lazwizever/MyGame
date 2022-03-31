@@ -1,48 +1,16 @@
-#bullet{
+.bullet{
     position: absolute;
     width: 8px;
-    left: 31.2vw;
+    left: 50%;
     height:22px;
 
-    bottom: -75vh;
-    margin: auto;
-    background-color: #d35400;
+    bottom: 100px;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: greenyellow;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 
-    animation-name: moveBullet;
-    /*animation-iteration-count: infinite;*/
-    animation-duration: 5s;
-    animation-direction: normal;
 }
 
-
-#bullet1{
-    position: absolute;
-    width: 8px;
-    left: 31.2vw;
-    height:22px;
-
-    bottom: -72vh;
-    margin: auto;
-    background-color: #d35400;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-
-    animation-name: moveBullet;
-    /*animation-iteration-count: infinite;*/
-    animation-duration: 5s;
-    animation-direction: normal;
-}
-
-
-
-
-/*
-
-@keyframes moveBullet {
-    to {
-        bottom: 180vh;
-        transform: translateY(+100%);
-    }
-}*/
+/*#d35400*/
