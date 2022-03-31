@@ -45,9 +45,44 @@ https://creativecommons.org/licenses/by-sa/3.0/
 
 <button id="btnStart" type="button" class="btn btn-primary" style="background-color: black">Start</button>
 
-<!--<h3>Introduction</h3>
 
-<p> Shoot - Press Space Bar <br> Move Left - Press Left-Arrow Key <br> Move Right - Press Right-Arrow Key</p>-->
+<section id="gameControlSection">
+
+    <h6 id="FSentence">USE THE</h6>
+
+    <img id="leftArrow" src="assets/images/Left_Arrow.jpg" alt="">
+
+    <h6 id="sSentence">AND</h6>
+
+    <img id="rightArrow" src="assets/images/Right_Arrow.jpg" alt="">
+
+    <h6 id="tSentence">KEYS TO MOVE.</h6>
+
+    <h6 id="foSentence">USE</h6>
+
+    <img id="spaceBar" src="assets/images/spacebar.png" alt="">
+
+    <h6 id="fiSentence">TO FIRE LASERS.</h6>
+</section>
+
+
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    const music = new Audio('assets/audio/homePageBckgrndMusic');
+
+    $("#btnRecruit").click(function (){
+
+        music.play();
+        music.loop = true;
+        music.playbackRate = 1;
+
+    });
+
+
+</script>
+
 
 </body>
 </html>

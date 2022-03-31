@@ -111,3 +111,68 @@ p{
     right: 15vw;
 
 }
+
+#FSentence{
+    position: absolute;
+    bottom: 11.2vh;
+    right: 19vw;
+    font-size: 16px;
+    color: orange;
+}
+
+#leftArrow{
+    position: absolute;
+    bottom: 11.2vh;
+    right: 16vw;
+    width: 30px;
+    height: 30px;
+}
+
+#sSentence{
+    position: absolute;
+    bottom: 11.2vh;
+    right: 13vw;
+    font-size: 16px;
+    color: orange;
+}
+
+#rightArrow{
+    position: absolute;
+    bottom: 11.2vh;
+    right: 10vw;
+    width: 30px;
+    height: 30px;
+}
+
+#tSentence{
+    position: absolute;
+    bottom: 11.2vh;
+    right: 2vw;
+    font-size: 16px;
+    color: orange;
+}
+
+#fiSentence{
+    position: absolute;
+    bottom: 5vh;
+    right: 4vw;
+    font-size: 16px;
+    color: orange;
+}
+
+#spaceBar{
+    position: absolute;
+    bottom: 6vh;
+    right: 13vw;
+    width: 60px;
+    height: 60px;
+}
+
+#foSentence{
+    position: absolute;
+    bottom: 5.3vh;
+    right: 18vw;
+    font-size: 16px;
+    color: orange;
+}
+
