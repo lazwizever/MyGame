@@ -31,11 +31,30 @@ $(document).keydown(function (e){
             bullet.style.left = p.left + 50 + "px";       //bullet should always be placed at the top of jet..!
             bullet.style.bottom = bulletBottom + 10 + "px";
 
+
+            var pZombie = $(".zmb").position();
+
+            var zombies = document.getElementsByClassName("zmb");
+
+            for (let i = 0; i < zombies.length; i++) {
+                var z = zombies[i];
+
+                if (z!= undefined){
+
+                    var bltPosition = bullet.getBoundingClientRect();
+                    var zmbPosition = z.getBoundingClientRect();
+
+                    if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left  && bltPosition.top <= zmbPosition.top &&
+                        bltPosition.bottom <= zmbPosition.bottom) {
+
+                        z.style.display = 'none';
+
+
+
+                    }
+                }
+            }
         });
-
     }
-
-
-
 });
 

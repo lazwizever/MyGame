@@ -28,7 +28,7 @@
 
 
     <!-----Zombie section----->
-    <div id="zombie" >
+    <div id="zombie" class="zmb">
         <img src="assets/images/zombie1.png" alt="">
     </div>
 
@@ -77,6 +77,7 @@
         <img id="heart3" src="assets/images/heart1.png" alt="">
     </section>
 
+    <img id="iconBtnBack" src="assets/images/b-modified.png" alt="">
 
 
 </main>
@@ -173,6 +174,7 @@
     $("#btnStart").click(function (){
         $("#homePageSection").css('display','none');
         $("#gamePlaySection").css('display','block');
+        $("#scoreBoard").val("0");
         /*playMusicZombie();*/
     });
 
