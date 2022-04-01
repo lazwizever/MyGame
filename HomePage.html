@@ -31,55 +31,62 @@ https://creativecommons.org/licenses/by-sa/3.0/
 
 <body>
 
-<h1> Zombie Shooter</h1>
+<main id="homePageSection">
 
-<img src="assets/images/Home_Page.jpg" alt="">
+    <h1> Zombie Shooter</h1>
 
-<div id="btnGrp" class="btn-group-vertical mt-4">
-    <button id="btnRecruit" type="button" class="btn btn-primary" style="background-color: #2f3542">Recruit</button>
-    <button id="btnRegular" type="button" class="btn btn-primary" style="background-color: #2f3542">Regular</button>
-    <button id="btnVeteran" type="button" class="btn btn-primary" style="background-color: #2f3542">Veteran</button>
-</div>
+    <img src="assets/images/Home_Page.jpg" alt="">
 
-<h2>Select Difficulty</h2>
+    <div id="btnGrp" class="btn-group-vertical mt-4">
+        <button id="btnRecruit" type="button" class="btn btn-primary" style="background-color: #2f3542">Recruit</button>
+        <button id="btnRegular" type="button" class="btn btn-primary" style="background-color: #2f3542">Regular</button>
+        <button id="btnVeteran" type="button" class="btn btn-primary" style="background-color: #2f3542">Veteran</button>
+    </div>
 
-<button id="btnStart" type="button" class="btn btn-primary" style="background-color: black">Start</button>
+    <h2>Select Difficulty</h2>
+
+    <button id="btnStart" type="button" class="btn btn-primary" style="background-color: black">Start</button>
 
 
-<section id="gameControlSection">
+    <section id="gameControlSection">
 
-    <h6 id="FSentence">USE THE</h6>
+        <h6 id="FSentence">USE THE</h6>
 
-    <img id="leftArrow" src="assets/images/Left_Arrow.jpg" alt="">
+        <img id="leftArrow" src="assets/images/Left_Arrow.jpg" alt="">
 
-    <h6 id="sSentence">AND</h6>
+        <h6 id="sSentence">AND</h6>
 
-    <img id="rightArrow" src="assets/images/Right_Arrow.jpg" alt="">
+        <img id="rightArrow" src="assets/images/Right_Arrow.jpg" alt="">
 
-    <h6 id="tSentence">KEYS TO MOVE.</h6>
+        <h6 id="tSentence">KEYS TO MOVE.</h6>
 
-    <h6 id="foSentence">USE</h6>
+        <h6 id="foSentence">USE</h6>
 
-    <img id="spaceBar" src="assets/images/spacebar.png" alt="">
+        <img id="spaceBar" src="assets/images/spacebar.png" alt="">
 
-    <h6 id="fiSentence">TO FIRE LASERS.</h6>
-</section>
+        <h6 id="fiSentence">TO FIRE LASERS.</h6>
+    </section>
+
+</main>
+
+
+
 
 
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 
 <script>
 
-    const music = new Audio('assets/audio/homePageBckgrndMusic');
+    /*playMusic();*/
 
-    $("#btnRecruit").click(function (){
+    var music = new Audio("assets/audio/backGroundAudio.mp3");
 
+  /*  function playMusic(){
         music.play();
         music.loop = true;
         music.playbackRate = 1;
-
-    });
-
+    }
+*/
 
 </script>
 

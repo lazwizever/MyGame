@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="assets/css/Rocket.css">
     <link rel="stylesheet" href="assets/css/Body.css">
     <link rel="stylesheet" href="assets/css/Bullet.css">
+    <link rel="stylesheet" href="assets/css/HomePage.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://www.fontspace.com/zoombieland-font-f43750">
+    <link rel="stylesheet" href="http://www.fontget.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Rock+3D&display=swap" rel="stylesheet">
 
 
 </head>
 
 <body>
 
+<main id="gamePlaySection">
     <img src="assets/images/wall.jpg" alt="">
 
 
@@ -54,11 +64,102 @@
     <!------------------------------------>
 
 
+    <div id="divScoreBoard">
+        <label for="scoreBoard" class="form-label"></label>
+        <input type="text" placeholder="0" class="form-control" id="scoreBoard">
+    </div>
+
+
+
+</main>
+
+<main id="homePageSection">
+
+    <h1> Zombie Shooter</h1>
+
+    <img src="assets/images/Home_Page.jpg" alt="">
+
+    <div id="btnGrp" class="btn-group-vertical mt-4">
+        <button id="btnRecruit" type="button" class="btn btn-primary" style="background-color: #2f3542">Recruit</button>
+        <button id="btnRegular" type="button" class="btn btn-primary" style="background-color: #2f3542">Regular</button>
+        <button id="btnVeteran" type="button" class="btn btn-primary" style="background-color: #2f3542">Veteran</button>
+    </div>
+
+    <h2>Select Difficulty</h2>
+
+    <button id="btnStart" type="button" class="btn btn-primary" style="background-color: black">Start</button>
+
+
+    <section id="gameControlSection">
+
+        <h6 id="FSentence">USE THE</h6>
+
+        <img id="leftArrow" src="assets/images/Left_Arrow.jpg" alt="">
+
+        <h6 id="sSentence">AND</h6>
+
+        <img id="rightArrow" src="assets/images/Right_Arrow.jpg" alt="">
+
+        <h6 id="tSentence">KEYS TO MOVE.</h6>
+
+        <h6 id="foSentence">USE</h6>
+
+        <img id="spaceBar" src="assets/images/spacebar.png" alt="">
+
+        <h6 id="fiSentence">TO FIRE LASERS.</h6>
+    </section>
+
+</main>
+
+
 
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/JS/Rocket.js"></script>
 <script src="assets/JS/Zombie.js"></script>
 <script src="assets/JS/Bullet.js"></script>
+<script src="assets/JS/HomePageBgMusic.js"></script>
+
+
+<script>
+    const music = new Audio("assets/audio/backGroundAudio.mp3");
+    const musicZombie = new Audio("assets/audio/ZombieGrowl.mp3");
+    const musicGun = new Audio("assets/audio/plasmaGun.wav");
+
+
+    function playMusic(){
+        music.play();
+        music.loop = true;
+        music.playbackRate = 1;
+    }
+
+    function playMusicZombie(){
+        musicZombie.play();
+        musicZombie.loop = true;
+        musicZombie.playbackRate = 1;
+    }
+
+    function playMusicGun(){
+        musicGun.play();
+        musicGun.loop = true;
+        musicGun.playbackRate = 1;
+    }
+
+    $("#gamePlaySection").css('display','none');
+
+
+    $("#btnStart").click(function (){
+        $("#homePageSection").css('display','none');
+        $("#gamePlaySection").css('display','block');
+        /*playMusicZombie();*/
+    });
+
+    $(document).ready(function() {
+        music.get(0).play();
+    });
+
+
+</script>
+
 
 </body>
 </html>
