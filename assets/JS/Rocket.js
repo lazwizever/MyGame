@@ -20,6 +20,22 @@ $(document).keydown(function (e){
 
     if (e.keyCode === 32){
 
+        const shootingAudio = new Audio("assets/audio/laserGun.mp3");
+
+        /*if ($("#spaceBar").click()){
+            shootingAudio.play();
+            shootingAudio.loop = true;
+            shootingAudio.playbackRate = 1;
+        }
+
+        if (e.keyCode ===12){
+            shootingAudio.pause();
+        }*/
+
+
+
+
+
         var bullet = document.createElement("section");
         bullet.classList.add("bullet");
         $("body").append(bullet);
@@ -32,7 +48,8 @@ $(document).keydown(function (e){
             bullet.style.bottom = bulletBottom + 10 + "px";
 
 
-            var pZombie = $(".zmb").position();
+
+            /*------------------Destroy Zombies----------------*/
 
             var zombies = document.getElementsByClassName("zmb");
 
@@ -50,6 +67,11 @@ $(document).keydown(function (e){
                         z.style.display = 'none';
 
 
+                        /*------------------------ScoreBoard-----------------------*/
+
+                        var score = parseInt($("#scoreBoard").val()) + 6;
+                        $("#scoreBoard").val(score);
+
 
                     }
                 }
@@ -58,3 +80,22 @@ $(document).keydown(function (e){
     }
 });
 
+
+$(document).keypress(function (e){
+
+    const shootingAudio = new Audio("assets/audio/laserGun.mp3");
+
+    if (e.keyCode ===32 && e.keyCode !=12){
+        console.log("hjhjhj");
+        /*shootingAudio.play();*/
+        shootingAudio.loop = true;
+        shootingAudio.playbackRate = 1;
+    }
+
+    if (e.keyCode === undefined){
+        console.log("ccccc")
+    }
+
+
+
+});
