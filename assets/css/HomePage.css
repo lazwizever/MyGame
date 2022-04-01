@@ -200,6 +200,7 @@ body{
     font-family: Exquisite Corpse;
     font-size: 30px;
     border: 2px solid grey;
+    z-index: 2;
 }
 
 #lblScore{
@@ -207,4 +208,21 @@ body{
     position: relative;
     color: #44bd32;
 
+}
+
+#heartSection{
+    right: 6vw;
+    width: 10vw;
+    top: 19vh;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    height: 6vh;
+}
+
+#heartSection>img{
+    top: 19vh;
+    width: 50px;
+    height: 50px;
+    right: 13vw;
 }
