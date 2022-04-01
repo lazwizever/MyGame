@@ -65,10 +65,9 @@
 
 
     <div id="divScoreBoard">
-        <label for="scoreBoard" class="form-label"></label>
-        <input type="text" placeholder="0" class="form-control" id="scoreBoard">
+        <label id="lblScore" for="scoreBoard" style="font-family: 'DK Face Your Fears';font-size: 36px" class="form-label">Score</label>
+        <input type="text" style="background-color: black;color: #e67e22" placeholder="500" class="form-control" id="scoreBoard">
     </div>
-
 
 
 </main>
@@ -109,6 +108,9 @@
         <h6 id="fiSentence">TO FIRE LASERS.</h6>
     </section>
 
+
+    <audio id="audio" src="assets/audio/backGroundAudio.mp3" loop="loop"></audio>
+
 </main>
 
 
@@ -121,16 +123,28 @@
 
 
 <script>
-    const music = new Audio("assets/audio/backGroundAudio.mp3");
+    const music= new Audio("assets/audio/backGroundAudio.mp3");
     const musicZombie = new Audio("assets/audio/ZombieGrowl.mp3");
     const musicGun = new Audio("assets/audio/plasmaGun.wav");
 
+  /*  musics.play();*/
 
+   /* $(document).ready(function() {
+       $("#audio").get(0).play();
+    });*/
+
+    var audiosss = document.getElementById("audio");
     function playMusic(){
-        music.play();
-        music.loop = true;
-        music.playbackRate = 1;
+        audiosss.muted = true;
+        audiosss.play();
+        audiosss.muted = false;
+        audiosss.play();
     }
+
+    /*function playMusic(){
+
+    }
+
 
     function playMusicZombie(){
         musicZombie.play();
@@ -142,7 +156,7 @@
         musicGun.play();
         musicGun.loop = true;
         musicGun.playbackRate = 1;
-    }
+    }*/
 
     $("#gamePlaySection").css('display','none');
 
@@ -153,9 +167,6 @@
         /*playMusicZombie();*/
     });
 
-    $(document).ready(function() {
-        music.get(0).play();
-    });
 
 
 </script>
