@@ -10,6 +10,7 @@ main>img{
 }
 
 #btnBack{
+    height: 40px;
     position: absolute;
     width: 10vw;
     top: 1.5vw;
@@ -19,6 +20,10 @@ main>img{
     color: #fed330;
     opacity: 90%;
     border: 0;
+}
+
+#btnBack:hover{
+    border: 2px solid gray;
 }
 
 
@@ -61,4 +66,29 @@ main>img{
     width: 50px;
     height: 50px;
     right: 13vw;
+}
+
+#loadGameSection{
+    idth: 100vw;
+    display: block;
+    height: 100vh;
+    background-color: #0e0c0c;
+}
+
+#loadGameSection>img:nth-child(1){
+    left: 24vw;
+    position: absolute;
+    bottom: 40vh;
+    width: 50vw;
+    height: 50vh;
+}
+
+
+#loadGameSection>h1{
+    left: 40vw;
+    position: absolute;
+    font-size: 90px;
+    font-family: 'Blood Lust';
+    bottom: 12vh;
+    color: #737373;
 }

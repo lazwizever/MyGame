@@ -48,20 +48,21 @@ $(document).keydown(function (e){
             bullet.style.bottom = bulletBottom + 10 + "px";
 
 
-
             /*------------------Destroy Zombies----------------*/
 
             var zombies = document.getElementsByClassName("zmb");
+            var rocket = document.getElementById("rocket");
 
             for (let i = 0; i < zombies.length; i++) {
                 var z = zombies[i];
 
-                if (z!= undefined){
+                if (z != undefined) {
 
                     var bltPosition = bullet.getBoundingClientRect();
                     var zmbPosition = z.getBoundingClientRect();
+                    var rocketPosition = rocket.getBoundingClientRect();
 
-                    if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left  && bltPosition.top <= zmbPosition.top &&
+                    if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left && bltPosition.top <= zmbPosition.top &&
                         bltPosition.bottom <= zmbPosition.bottom) {
 
                         z.style.display = 'none';
@@ -73,6 +74,11 @@ $(document).keydown(function (e){
                         $("#scoreBoard").val(score);
 
 
+                    }
+
+                    if (rocketPosition.top >= zmbPosition.top){
+                        console.log("sdsdsdd");
+                        /*rocket.style.display = 'none';*/
                     }
                 }
             }
@@ -87,7 +93,7 @@ $(document).keypress(function (e){
 
     if (e.keyCode ===32 && e.keyCode !=12){
         console.log("hjhjhj");
-        /*shootingAudio.play();*/
+        shootingAudio.play();
         shootingAudio.loop = true;
         shootingAudio.playbackRate = 1;
     }

@@ -23,6 +23,8 @@
 
 <body>
 
+<audio id="audio" src="assets/audio/backGroundAudio.mp3"></audio>
+
 <main id="gamePlaySection">
     <img src="assets/images/wall.jpg" alt="">
 
@@ -119,64 +121,78 @@
         <h6 id="fiSentence">TO FIRE LASERS.</h6>
     </section>
 
-
-
 </main>
 
+<main id="loadGameSection" style="display: none">
+        <img src="assets/images/loadwalker.gif" alt="">
 
+       <h1>LOADING....</h1>
+</main>
 
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/JS/Rocket.js"></script>
 <script src="assets/JS/Zombie.js"></script>
 <script src="assets/JS/Bullet.js"></script>
-<script src="assets/JS/HomePageBgMusic.js"></script>
+<script src="assets/JS/GamePlay.js"></script>
 
 
 <script>
-    const music= new Audio("assets/audio/backGroundAudio.mp3");
-    const musicZombie = new Audio("assets/audio/ZombieGrowl.mp3");
+   /* const music= new Audio("assets/audio/backGroundAudio.mp3");*/
+    const zombieAudio = new Audio("assets/audio/ZombieGrowl.mp3");
 
 
-  /*  musics.play();*/
-
-   /* $(document).ready(function() {
-       $("#audio").get(0).play();
-    });*/
-
-    var audiosss = document.getElementById("audio");
+   /* var audiosss = document.getElementById("audio");
     function playMusic(){
         audiosss.muted = true;
         audiosss.play();
         audiosss.muted = false;
         audiosss.play();
-    }
-
-    /*function playMusic(){
-
-    }
-
-
-    function playMusicZombie(){
-        musicZombie.play();
-        musicZombie.loop = true;
-        musicZombie.playbackRate = 1;
-    }
-
-    function playMusicGun(){
-        musicGun.play();
-        musicGun.loop = true;
-        musicGun.playbackRate = 1;
     }*/
+
+
+  /* $(window).on('load',function (){
+       const music= new Audio("assets/audio/backGroundAudio.mp3");
+       music.play();
+       music.loop = true;
+       music.playbackRate = 1;
+
+       console.log("Baallala");
+   });*/
+
+
+    /*setInterval(() => {
+
+        musicss.play();
+        musicss.loop = true;
+        musicss.playbackRate = 1;
+
+    },2000);*/
+
+
+
 
     $("#gamePlaySection").css('display','none');
 
 
     $("#btnStart").click(function (){
         $("#homePageSection").css('display','none');
-        $("#gamePlaySection").css('display','block');
+        $("#gamePlaySection").css('display','none');
         $("#scoreBoard").val("0");
-        /*playMusicZombie();*/
+        $("#loadGameSection").css('display','block');
+
+
+        setInterval(() => {
+            $("#gamePlaySection").css('display','block');
+            $("#loadGameSection").css('display','none');
+
+            zombieAudio.play();
+            zombieAudio.loop = true;
+            zombieAudio.playbackRate = 1;
+
+        },5800);
+
     });
+
 
 
 
