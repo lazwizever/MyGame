@@ -60,7 +60,7 @@ $(document).keydown(function (e){
 
                     var bltPosition = bullet.getBoundingClientRect();
                     var zmbPosition = z.getBoundingClientRect();
-                    var rocketPosition = rocket.getBoundingClientRect();
+
 
                     if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left && bltPosition.top <= zmbPosition.top &&
                         bltPosition.bottom <= zmbPosition.bottom) {
@@ -75,11 +75,6 @@ $(document).keydown(function (e){
 
 
                     }
-
-                    if (rocketPosition.top >= zmbPosition.top){
-                        console.log("sdsdsdd");
-                        /*rocket.style.display = 'none';*/
-                    }
                 }
             }
         });
@@ -87,21 +82,40 @@ $(document).keydown(function (e){
 });
 
 
+
+var rckt = document.getElementById("rocket");
+var rP = rckt.getBoundingClientRect();
+
+
+var zombie = document.getElementsByClassName("zmb");
+
+for (let i = 0; i < zombie.length; i++) {
+    var zmb = zombie[i];
+    var zmbP = zmb.getBoundingClientRect();
+
+    if (rP.right <= zmbP.right && /*rP.left >= zmbP.left && rP.top <= zmbP.top &&*/
+        rP.bottom <= zmbP.bottom){
+
+        console.log("sdsdsdd");
+        rckt.style.display = 'none';
+    }
+
+}
+
+
+
+
+
 $(document).keypress(function (e){
 
     const shootingAudio = new Audio("assets/audio/laserGun.mp3");
 
     if (e.keyCode ===32 && e.keyCode !=12){
-        console.log("hjhjhj");
-        shootingAudio.play();
+        /*shootingAudio.play()*/;
         shootingAudio.loop = true;
         shootingAudio.playbackRate = 1;
     }
 
     if (e.keyCode === undefined){
-        console.log("ccccc")
     }
-
-
-
 });

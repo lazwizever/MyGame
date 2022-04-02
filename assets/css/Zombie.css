@@ -51,7 +51,7 @@ main>.zmb>img{
 
 
 body>main>div:nth-child(3){
-    top: 0;
+    top: 4vh;
     left: 26vw;
     animation-delay: 3s;
 }
@@ -63,9 +63,31 @@ body>main>div:nth-child(4){
 }
 
 body>main>div:nth-child(5){
-    top: 0;
+    top: 1vh;
     left: 78vw;
     animation-delay: 2s;
 }
 
+body>main>div:nth-child(6){
+    top: 0;
+    left: 60vw;
+    animation-delay: 7s;
+}
 
+body>main>div:nth-child(7){
+    top: 3vh;
+    left: 92vw;
+    animation-delay: 9s;
+}
+
+body>main>div:nth-child(8){
+    top: 6vh;
+    left: 5vw;
+    animation-delay: 1s;
+}
+
+body>main>div:nth-child(8){
+    top: 0;
+    left: 40vw;
+    animation-delay: 5s;
+}
