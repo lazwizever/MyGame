@@ -167,7 +167,7 @@
 
 <script>
     const zombieAudio = new Audio("assets/audio/ZombieGrowl.mp3");
-    
+
    $(window).on('load',function (){
        var shoot = document.createElement('audio');
        shoot.setAttribute('src','assets/audio/backGroundAudio.mp3');
@@ -181,15 +181,27 @@
     var clicksId = 0;
 
    $("#btnRecruit").click(function (){
+       var shoot = document.createElement('audio');
+       shoot.setAttribute('src','assets/audio/clickAudio.wav');
+       shoot.play();
+
        clicksId = 1;
    });
 
     $("#btnRegular").click(function (){
+        var shoot = document.createElement('audio');
+        shoot.setAttribute('src','assets/audio/clickAudio.wav');
+        shoot.play();
+
         clicksId = 2;
     });
 
 
     $("#btnStart").click(function (){
+
+        var shoot = document.createElement('audio');
+        shoot.setAttribute('src','assets/audio/clickAudio.wav');
+        shoot.play();
 
         var shoot = document.createElement('audio');
         shoot.setAttribute('src','assets/audio/zombieMusic.mp3');
