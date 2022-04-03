@@ -166,45 +166,19 @@
 
 
 <script>
-   /* const music= new Audio("assets/audio/backGroundAudio.mp3");*/
     const zombieAudio = new Audio("assets/audio/ZombieGrowl.mp3");
+    
+   $(window).on('load',function (){
+       var shoot = document.createElement('audio');
+       shoot.setAttribute('src','assets/audio/backGroundAudio.mp3');
+       shoot.play();
 
-
-   /* var audiosss = document.getElementById("audio");
-    function playMusic(){
-        audiosss.muted = true;
-        audiosss.play();
-        audiosss.muted = false;
-        audiosss.play();
-    }*/
-
-
-  /* $(window).on('load',function (){
-       const music= new Audio("assets/audio/backGroundAudio.mp3");
-       music.play();
-       music.loop = true;
-       music.playbackRate = 1;
-
-       console.log("Baallala");
-   });*/
-
-
-    /*setInterval(() => {
-
-        musicss.play();
-        musicss.loop = true;
-        musicss.playbackRate = 1;
-
-    },2000);*/
-
-
-
+   });
 
     $("#gamePlaySection").css('display','none');
 
 
     var clicksId = 0;
-
 
    $("#btnRecruit").click(function (){
        clicksId = 1;
@@ -216,36 +190,36 @@
 
 
     $("#btnStart").click(function (){
+
+        var shoot = document.createElement('audio');
+        shoot.setAttribute('src','assets/audio/zombieMusic.mp3');
+        shoot.play();
+
+
         $("#homePageSection").css('display','none');
         $("#gamePlaySection").css('display','none');
         $("#scoreBoard").val("0");
         $("#loadGameSection").css('display','block');
 
 
-       var interval = setInterval(() => {
+       setTimeout(() => {
             $("#gamePlaySection").css('display','block');
             $("#loadGameSection").css('display','none');
 
-            /*zombieAudio.play();*/
-            zombieAudio.loop = true;
-            zombieAudio.playbackRate = 1;
-
+           zombieAudio.play();
+           zombieAudio.loop = true;
+           zombieAudio.playbackRate = 1;
         },5800);
 
 
         if(clicksId === 2){
             $(".newZmb").css('display','block');
-
         }
 
         if(clicksId === 1){
             $(".newZmb").css('display','none');
-
         }
     });
-
-
-
 
 </script>
 

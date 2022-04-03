@@ -74,9 +74,6 @@ setInterval(destoryRocket,1);
 function destoryRocket(){
     var zombie = $(".zmb");
 
-
-
-
     for (let i = 0; i < zombie.length; i++) {
         var temp = zombie[i];
         var zmbP = $(temp).css('top');
@@ -100,16 +97,13 @@ var rP = rckt.getBoundingClientRect();
 
 $(document).keypress(function (e){
 
-    const shootingAudio = new Audio("assets/audio/laserGun.mp3");
 
     if (e.keyCode ===32 && e.keyCode !=12){
-        /*shootingAudio.play()*/;
-        shootingAudio.loop = true;
-        shootingAudio.playbackRate = 1;
+        var shoot = document.createElement('audio');
+        shoot.setAttribute('src','assets/audio/laserGun.mp3');
+        shoot.play();
     }
 
-    if (e.keyCode === undefined){
-    }
 });
 
 
