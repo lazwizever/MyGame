@@ -26,9 +26,9 @@ main>.zmb{
     width: max-content;
     height: max-content;
 
-    animation-name: zombie;
+    /*animation-name: zombie;
     animation-iteration-count: infinite;
-    animation-duration: 8s;
+    animation-duration: 8s;*/
 }
 
 main>.zmb>img{
@@ -38,7 +38,7 @@ main>.zmb>img{
 
 /*-----------------------------------*/
 
-@keyframes zombie {
+/*@keyframes zombie {
     0%{
         top: 0;
     }
@@ -47,7 +47,7 @@ main>.zmb>img{
         top: 85vh;
 
     }
-}
+}*/
 
 
 body>main>div:nth-child(3){
@@ -86,8 +86,26 @@ body>main>div:nth-child(8){
     animation-delay: 1s;
 }
 
-body>main>div:nth-child(8){
+body>main>div:nth-child(9){
     top: 0;
     left: 40vw;
     animation-delay: 5s;
+}
+
+body>main>div:nth-child(10){
+    top: 0;
+    left: 0;
+    animation-delay: 1s;
+}
+
+body>main>div:nth-child(11){
+    top: 0;
+    left: 18vw;
+    animation-delay: 2s;
+}
+
+body>main>div:nth-child(12){
+    top: 0;
+    left: 70vw;
+    animation-delay: 1s;
 }

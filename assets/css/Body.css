@@ -56,6 +56,7 @@ main>img{
     width: 10vw;
     top: 19vh;
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     justify-content: space-between;
     height: 6vh;

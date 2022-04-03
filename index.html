@@ -62,6 +62,18 @@
         <img src="assets/images/zombie1.png" alt="">
     </div>
 
+    <div  id="zombie9" style="display: none" class="newZmb">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
+    <div id="zombie10" style="display: none" class="newZmb">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
+    <div id="zombie11" style="display: none" class="newZmb">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
 
     <!----------------------------------------->
 
@@ -191,6 +203,18 @@
     $("#gamePlaySection").css('display','none');
 
 
+    var clicksId = 0;
+
+
+   $("#btnRecruit").click(function (){
+       clicksId = 1;
+   });
+
+    $("#btnRegular").click(function (){
+        clicksId = 2;
+    });
+
+
     $("#btnStart").click(function (){
         $("#homePageSection").css('display','none');
         $("#gamePlaySection").css('display','none');
@@ -198,7 +222,7 @@
         $("#loadGameSection").css('display','block');
 
 
-        setInterval(() => {
+       var interval = setInterval(() => {
             $("#gamePlaySection").css('display','block');
             $("#loadGameSection").css('display','none');
 
@@ -208,6 +232,16 @@
 
         },5800);
 
+
+        if(clicksId === 2){
+            $(".newZmb").css('display','block');
+
+        }
+
+        if(clicksId === 1){
+            $(".newZmb").css('display','none');
+
+        }
     });
 
 

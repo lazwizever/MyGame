@@ -22,20 +22,6 @@ $(document).keydown(function (e){
 
         const shootingAudio = new Audio("assets/audio/laserGun.mp3");
 
-        /*if ($("#spaceBar").click()){
-            shootingAudio.play();
-            shootingAudio.loop = true;
-            shootingAudio.playbackRate = 1;
-        }
-
-        if (e.keyCode ===12){
-            shootingAudio.pause();
-        }*/
-
-
-
-
-
         var bullet = document.createElement("section");
         bullet.classList.add("bullet");
         $("body").append(bullet);
@@ -50,11 +36,11 @@ $(document).keydown(function (e){
 
             /*------------------Destroy Zombies----------------*/
 
-            var zombies = document.getElementsByClassName("zmb");
+            var tempZombies = document.getElementsByClassName("zmb");
             var rocket = document.getElementById("rocket");
 
-            for (let i = 0; i < zombies.length; i++) {
-                var z = zombies[i];
+            for (let i = 0; i < tempZombies.length; i++) {
+                var z = tempZombies[i];
 
                 if (z != undefined) {
 
@@ -62,10 +48,10 @@ $(document).keydown(function (e){
                     var zmbPosition = z.getBoundingClientRect();
 
 
-                    if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left && bltPosition.top <= zmbPosition.top &&
+                    if (bltPosition.right <= zmbPosition.right && bltPosition.left >= zmbPosition.left && bltPosition.top >= zmbPosition.top &&
                         bltPosition.bottom <= zmbPosition.bottom) {
 
-                        z.style.display = 'none';
+                        z.style.top = "-115px";
 
 
                         /*------------------------ScoreBoard-----------------------*/
@@ -82,28 +68,34 @@ $(document).keydown(function (e){
 });
 
 
-
-var rckt = document.getElementById("rocket");
-var rP = rckt.getBoundingClientRect();
+setInterval(destoryRocket,1);
 
 
-var zombie = document.getElementsByClassName("zmb");
+function destoryRocket(){
+    var zombie = $(".zmb");
 
-for (let i = 0; i < zombie.length; i++) {
-    var zmb = zombie[i];
-    var zmbP = zmb.getBoundingClientRect();
 
-    if (rP.right <= zmbP.right && /*rP.left >= zmbP.left && rP.top <= zmbP.top &&*/
-        rP.bottom <= zmbP.bottom){
 
-        console.log("sdsdsdd");
-        rckt.style.display = 'none';
+
+    for (let i = 0; i < zombie.length; i++) {
+        var temp = zombie[i];
+        var zmbP = $(temp).css('top');
+
+        /*console.log(zmbP);
+        console.log(zmbP == '709.912');*/
+
+        if (zmbP == '709.912'){
+
+            console.log("sdsdsdd");
+            /*rckt.style.display = 'none';*/
+        }
+
     }
-
 }
 
 
-
+var rckt = document.getElementById("rocket");
+var rP = rckt.getBoundingClientRect();
 
 
 $(document).keypress(function (e){
@@ -119,3 +111,69 @@ $(document).keypress(function (e){
     if (e.keyCode === undefined){
     }
 });
+
+
+setInterval(moveZombies,800);
+
+
+function moveZombies(){
+
+    var count = 0;
+
+    var zombies = $(".zmb");
+
+    for (let i = 0; i < zombies.length; i++) {
+        var z = zombies[i];
+
+        var random = Math.floor((Math.random() * 50) + 1);
+
+        var topZombie = $(z).css('top');
+        var newZombie = parseInt(topZombie) + random;
+
+        $(z).css('top',newZombie + "px");
+
+
+        if (newZombie > 712){
+            count++;
+
+            $(z).css('top',"0px");
+
+            if (count == 1){
+                $("#heart3").css('display','none');
+            }
+
+            if (count == 2){
+                $("#heart2").css('display','none');
+            }
+
+            if (count == 3){
+                $("#heart1").css('display','none');
+                console.log("Game Over");
+            }
+
+        }
+
+    }
+}
+
+/*setInterval(displayZombies,1000);
+
+
+function displayZombies(){
+
+    var zombies = $(".zmb");
+
+    for (let i = 0; i < zombies.length; i++) {
+        var z = zombies[i];
+
+        var css = $(z).css('display');
+
+        if (css == "none"){
+            $(z).css('top','0px');
+            $(z).css('display','block');
+        }
+
+
+    }
+}*/
+
