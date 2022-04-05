@@ -1,3 +1,6 @@
+var shoot = document.createElement('audio');
+shoot.setAttribute('src','assets/audio/laserGun.mp3');
+
 /*-----------------Move rocket from left-right , right-left and moving bullets----------------*/
 
 $(document).keydown(function (e){
@@ -14,13 +17,9 @@ $(document).keydown(function (e){
 
     }
 
-
-
     /*-----------------Moving Bullets-------------------*/
 
     if (e.keyCode === 32){
-
-        const shootingAudio = new Audio("assets/audio/laserGun.mp3");
 
         var bullet = document.createElement("section");
         bullet.classList.add("bullet");
@@ -59,7 +58,6 @@ $(document).keydown(function (e){
                         var score = parseInt($("#scoreBoard").val()) + 6;
                         $("#scoreBoard").val(score);
 
-
                     }
                 }
             }
@@ -68,39 +66,12 @@ $(document).keydown(function (e){
 });
 
 
-setInterval(destoryRocket,1);
 
 
-function destoryRocket(){
-    var zombie = $(".zmb");
-
-    for (let i = 0; i < zombie.length; i++) {
-        var temp = zombie[i];
-        var zmbP = $(temp).css('top');
-
-        /*console.log(zmbP);
-        console.log(zmbP == '709.912');*/
-
-        if (zmbP == '709.912'){
-
-            console.log("sdsdsdd");
-            /*rckt.style.display = 'none';*/
-        }
-
-    }
-}
-
-
-var rckt = document.getElementById("rocket");
-var rP = rckt.getBoundingClientRect();
-
+/*------------Play Shooting Sound-----------------*/
 
 $(document).keypress(function (e){
-
-
     if (e.keyCode ===32 && e.keyCode !=12){
-        var shoot = document.createElement('audio');
-        shoot.setAttribute('src','assets/audio/laserGun.mp3');
         shoot.play();
     }
 
@@ -108,7 +79,6 @@ $(document).keypress(function (e){
 
 
 setInterval(moveZombies,800);
-
 
 function moveZombies(){
 
@@ -127,6 +97,8 @@ function moveZombies(){
         $(z).css('top',newZombie + "px");
 
 
+        /*--------------------------Decrease health------------------------------*/
+
         if (newZombie > 712){
             count++;
 
@@ -143,31 +115,14 @@ function moveZombies(){
             if (count == 3){
                 $("#heart1").css('display','none');
                 console.log("Game Over");
+                zombieAudio.pause();
+                shoot.pause();
+                $("#GameOverTitle").css('display','block');
+
             }
 
         }
 
     }
 }
-
-/*setInterval(displayZombies,1000);
-
-
-function displayZombies(){
-
-    var zombies = $(".zmb");
-
-    for (let i = 0; i < zombies.length; i++) {
-        var z = zombies[i];
-
-        var css = $(z).css('display');
-
-        if (css == "none"){
-            $(z).css('top','0px');
-            $(z).css('display','block');
-        }
-
-
-    }
-}*/
 

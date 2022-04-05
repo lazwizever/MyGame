@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/Body.css">
     <link rel="stylesheet" href="assets/css/Bullet.css">
     <link rel="stylesheet" href="assets/css/HomePage.css">
+    <link rel="stylesheet" href="assets/css/GamePage.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://www.fontspace.com/zoombieland-font-f43750">
@@ -100,8 +101,6 @@
         <input type="text" style="background-color: black;color: #e67e22" placeholder="500" class="form-control" id="scoreBoard">
     </div>
 
-
-
     <section id="heartSection">
         <img id="heart1" src="assets/images/heart1.png" alt="">
         <img id="heart2" src="assets/images/heart1.png" alt="">
@@ -111,6 +110,9 @@
     <button id="btnBack" type="button" class="btn btn-primary" style="background-color: black">HOME</button>
 
     <div id="bulletPatch"></div>
+
+    <h1 id="GameOverTitle" style="display: none">Game Over</h1>
+
 
 </main>
 
@@ -166,13 +168,19 @@
 
 
 <script>
+    var bckGrndMusic = document.createElement('audio');
+    bckGrndMusic.setAttribute('src','assets/audio/backGroundAudio.mp3');
+
     const zombieAudio = new Audio("assets/audio/ZombieGrowl.mp3");
 
-   $(window).on('load',function (){
-       var shoot = document.createElement('audio');
-       shoot.setAttribute('src','assets/audio/backGroundAudio.mp3');
-       shoot.play();
+    var click = document.createElement('audio');
+    click.setAttribute('src','assets/audio/clickAudio.wav');
+    click.volume = 0.2;
 
+    /*-----------------------------------------------------------------------------*/
+
+   $(window).on('load',function (){
+       bckGrndMusic.play();
    });
 
     $("#gamePlaySection").css('display','none');
@@ -181,31 +189,23 @@
     var clicksId = 0;
 
    $("#btnRecruit").click(function (){
-       var shoot = document.createElement('audio');
-       shoot.setAttribute('src','assets/audio/clickAudio.wav');
-       shoot.play();
-
-       clicksId = 1;
+       click.play();
+       clicksId++;
    });
 
     $("#btnRegular").click(function (){
-        var shoot = document.createElement('audio');
-        shoot.setAttribute('src','assets/audio/clickAudio.wav');
-        shoot.play();
-
-        clicksId = 2;
+        click.play();
+        clicksId++;
     });
 
 
     $("#btnStart").click(function (){
+        bckGrndMusic.pause();
+        click.play();
 
-        var shoot = document.createElement('audio');
-        shoot.setAttribute('src','assets/audio/clickAudio.wav');
-        shoot.play();
-
-        var shoot = document.createElement('audio');
-        shoot.setAttribute('src','assets/audio/zombieMusic.mp3');
-        shoot.play();
+        var zmbMusic = document.createElement('audio');
+        zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
+        zmbMusic.play();
 
 
         $("#homePageSection").css('display','none');
