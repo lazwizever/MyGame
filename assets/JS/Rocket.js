@@ -69,9 +69,9 @@ $(document).keydown(function (e){
 
 $(document).keypress(function (e){
     if (e.keyCode ===32 && e.keyCode !=12){
-        var shoot = document.createElement('audio');
+       /* var shoot = document.createElement('audio');
         shoot.setAttribute('src','assets/audio/laserGun.mp3');
-        shoot.play();
+        shoot.play();*/
     }
 
 });
@@ -84,6 +84,7 @@ var count = 0;
 function moveZombies(){
 
     var zombies = $(".zmb");
+    var zombies1 = $(".newZmb");
 
     for (let i = 0; i < zombies.length; i++) {
         var z = zombies[i];
@@ -98,12 +99,49 @@ function moveZombies(){
 
         /*--------------------------Decrease health------------------------------*/
 
-
-
         if (newZombie > 712){
             count++;
 
             $(z).css('top',"0px");
+
+            if (count == 1){
+                $("#hrt3").css('visibility','hidden');
+            }
+
+            if (count == 2){
+                $("#hrt2").css('visibility','hidden');
+            }
+
+
+            if (count == 3){
+                $("#hrt1").css('visibility','hidden');
+                zombieAudio.pause();
+                $("#GameOverTitle").css('display','block');
+                clearInterval(mveZmbInterval);
+                $(document).off('keypress');
+                $(document).off('keydown');
+            }
+        }
+
+        /*---------------------------------------------------------------*/
+
+    }
+
+    for (let j = 0; j < zombies1.length; j++) {
+        var tempZmb = zombies1[j];
+
+        var r = Math.floor((Math.random() * 50) + 1);
+
+        var tpZmb = $(tempZmb).css('top');
+        var newTopZmb = parseInt(tpZmb) + random;
+
+        $(tempZmb).css('top',newTopZmb + "px");
+
+
+        if (newTopZmb > 712){
+            count++;
+
+            $(tempZmb).css('top',"0px");
 
             if (count == 1){
                 $("#hrt3").css('visibility','hidden');

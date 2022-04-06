@@ -180,7 +180,7 @@
     /*-----------------------------------------------------------------------------*/
 
    $(window).on('load',function (){
-       bckGrndMusic.play();
+       /*bckGrndMusic.play();*/
    });
 
     $("#gamePlaySection").css('display','none');
@@ -205,7 +205,7 @@
 
         var zmbMusic = document.createElement('audio');
         zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
-        zmbMusic.play();
+        /*zmbMusic.play();*/
 
 
         $("#homePageSection").css('display','none');
@@ -218,7 +218,7 @@
             $("#gamePlaySection").css('display','block');
             $("#loadGameSection").css('display','none');
 
-           zombieAudio.play();
+           /*zombieAudio.play();*/
            zombieAudio.loop = true;
            zombieAudio.playbackRate = 1;
         },5800);
