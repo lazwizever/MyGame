@@ -1,6 +1,3 @@
-var shoot = document.createElement('audio');
-shoot.setAttribute('src','assets/audio/laserGun.mp3');
-
 /*-----------------Move rocket from left-right , right-left and moving bullets----------------*/
 
 $(document).keydown(function (e){
@@ -72,17 +69,19 @@ $(document).keydown(function (e){
 
 $(document).keypress(function (e){
     if (e.keyCode ===32 && e.keyCode !=12){
+        var shoot = document.createElement('audio');
+        shoot.setAttribute('src','assets/audio/laserGun.mp3');
         shoot.play();
     }
 
 });
 
 
-setInterval(moveZombies,800);
+var mveZmbInterval = setInterval(moveZombies,800);
+
+var count = 0;
 
 function moveZombies(){
-
-    var count = 0;
 
     var zombies = $(".zmb");
 
@@ -99,28 +98,30 @@ function moveZombies(){
 
         /*--------------------------Decrease health------------------------------*/
 
+
+
         if (newZombie > 712){
             count++;
 
             $(z).css('top',"0px");
 
             if (count == 1){
-                $("#heart3").css('display','none');
+                $("#hrt3").css('visibility','hidden');
             }
 
             if (count == 2){
-                $("#heart2").css('display','none');
+                $("#hrt2").css('visibility','hidden');
             }
+
 
             if (count == 3){
-                $("#heart1").css('display','none');
-                console.log("Game Over");
+                $("#hrt1").css('visibility','hidden');
                 zombieAudio.pause();
-                shoot.pause();
                 $("#GameOverTitle").css('display','block');
-
+                clearInterval(mveZmbInterval);
+                $(document).off('keypress');
+                $(document).off('keydown');
             }
-
         }
 
     }

@@ -4,10 +4,6 @@ body>main>div:nth-child(2){
     width: max-content;
     height: max-content;
 
-
-    animation-name: zombie;
-    animation-iteration-count: infinite;
-    animation-duration: 6s;
 }
 
 body>main>div:nth-child(2)>img{
@@ -31,55 +27,58 @@ main>.zmb>img{
     height: 115px;
 }
 
+main>.newZmb{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    display: none;
+}
+
+main>.newZmb>img{
+    width: 80px;
+    height: 115px;
+}
+
 /*-----------------------------------*/
 
 
 body>main>div:nth-child(3){
     left: 26vw;
-    animation-delay: 3s;
+
 }
 
 body>main>div:nth-child(4){
     left: 50vw;
-    animation-delay: 1s;
 }
 
 body>main>div:nth-child(5){
     left: 78vw;
-    animation-delay: 2s;
 }
 
 body>main>div:nth-child(6){
     left: 60vw;
-    animation-delay: 7s;
 }
 
 body>main>div:nth-child(7){
     left: 92vw;
-    animation-delay: 9s;
 }
 
 body>main>div:nth-child(8){
     left: 5vw;
-    animation-delay: 1s;
 }
 
 body>main>div:nth-child(9){
     left: 40vw;
-    animation-delay: 5s;
 }
 
 body>main>div:nth-child(10){
     left: 0;
-    animation-delay: 1s;
 }
 
 body>main>div:nth-child(11){
     left: 18vw;
-    animation-delay: 2s;
 }
 
 body>main>div:nth-child(12){
     left: 70vw;
-    animation-delay: 1s;
 }
