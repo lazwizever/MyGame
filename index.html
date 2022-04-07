@@ -79,10 +79,6 @@
     <!----------------------------------------->
 
 
-    <!--font-family: 'Rock 3D', cursive;-->
-
-
-
     <!-----Rocket section----->
     <div id="rocket">
         <img id="rocketImg" src="assets/images/rocket1.png" alt="">
@@ -115,6 +111,7 @@
 
 
 </main>
+
 
 <main id="homePageSection">
 
@@ -152,13 +149,17 @@
         <h6 id="fiSentence">TO FIRE LASERS.</h6>
     </section>
 
+    <h3 id="errorMessage" style="display: none">Select Difficulty First</h3>
+
 </main>
+
 
 <main id="loadGameSection" style="display: none">
         <img src="assets/images/loadwalker.gif" alt="">
 
        <h1>LOADING....</h1>
 </main>
+
 
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/JS/Rocket.js"></script>
@@ -199,39 +200,48 @@
     });
 
 
-    $("#btnStart").click(function (){
-        bckGrndMusic.pause();
-        click.play();
 
-        var zmbMusic = document.createElement('audio');
-        zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
-        /*zmbMusic.play();*/
+        $("#btnStart").click(function (){
+            bckGrndMusic.pause();
+            click.play();
 
+            var zmbMusic = document.createElement('audio');
+            zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
+            /*zmbMusic.play();*/
 
-        $("#homePageSection").css('display','none');
-        $("#gamePlaySection").css('display','none');
-        $("#scoreBoard").val("0");
-        $("#loadGameSection").css('display','block');
-
-
-       setTimeout(() => {
-            $("#gamePlaySection").css('display','block');
-            $("#loadGameSection").css('display','none');
-
-           /*zombieAudio.play();*/
-           zombieAudio.loop = true;
-           zombieAudio.playbackRate = 1;
-        },5800);
+            if(clicksId ===1 || clicksId === 2){
+                $("#homePageSection").css('display','none');
+                $("#gamePlaySection").css('display','none');
+                $("#scoreBoard").val("0");
+                $("#loadGameSection").css('display','block');
 
 
-        if(clicksId === 2){
-            $(".newZmb").css('display','block');
-        }
+                setTimeout(() => {
+                    $("#gamePlaySection").css('display','block');
+                    $("#loadGameSection").css('display','none');
 
-        if(clicksId === 1){
-            $(".newZmb").css('display','none');
-        }
-    });
+                    /*zombieAudio.play();*/
+                    zombieAudio.loop = true;
+                    zombieAudio.playbackRate = 1;
+                },5800);
+
+
+
+                if(clicksId === 2){
+                    $(".newZmb").css('display','block');
+                }
+
+                if(clicksId === 1){
+                    $(".newZmb").css('display','none');
+                }
+
+            }else {
+                $("#errorMessage").css('display','block');
+                $("#btnStart").off('click');
+            }
+
+        });
+
 
 </script>
 

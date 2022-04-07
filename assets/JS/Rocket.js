@@ -33,7 +33,7 @@ $(document).keydown(function (e){
             /*------------------Destroy Zombies----------------*/
 
             var tempZombies = document.getElementsByClassName("zmb");
-            var rocket = document.getElementById("rocket");
+            var newZombies = document.getElementsByClassName("newZmb");
 
             for (let i = 0; i < tempZombies.length; i++) {
                 var z = tempZombies[i];
@@ -48,6 +48,33 @@ $(document).keydown(function (e){
                         bltPosition.bottom <= zmbPosition.bottom) {
 
                         z.style.top = "-115px";
+
+
+                        /*------------------------ScoreBoard-----------------------*/
+
+                        var score = parseInt($("#scoreBoard").val()) + 6;
+                        $("#scoreBoard").val(score);
+
+                    }
+                }
+            }
+
+
+            /*-------------------------------------------------------------*/
+
+            for (let i = 0; i < newZombies.length; i++) {
+                var tZmb = newZombies[i];
+
+                if (z != undefined) {
+
+                    var bltPosition = bullet.getBoundingClientRect();
+                    var zmbPstn = tZmb.getBoundingClientRect();
+
+
+                    if (bltPosition.right <= zmbPstn.right && bltPosition.left >= zmbPstn.left && bltPosition.top >= zmbPstn.top &&
+                        bltPosition.bottom <= zmbPstn.bottom) {
+
+                        tZmb.style.top = "-115px";
 
 
                         /*------------------------ScoreBoard-----------------------*/
@@ -133,7 +160,7 @@ function moveZombies(){
         var r = Math.floor((Math.random() * 50) + 1);
 
         var tpZmb = $(tempZmb).css('top');
-        var newTopZmb = parseInt(tpZmb) + random;
+        var newTopZmb = parseInt(tpZmb) + r;
 
         $(tempZmb).css('top',newTopZmb + "px");
 
