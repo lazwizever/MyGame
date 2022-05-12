@@ -26,7 +26,7 @@ $(document).keydown(function (e){
 
             var bulletBottom = parseInt(window.getComputedStyle(bullet).getPropertyValue("bottom"));
 
-            bullet.style.left = p.left + 50 + "px";       //bullet should always be placed at the top of jet..!
+            bullet.style.left = p.left + 50 + "px";       //bullet should always be placed at the top of jet
             bullet.style.bottom = bulletBottom + 10 + "px";
 
 
@@ -34,6 +34,7 @@ $(document).keydown(function (e){
 
             var tempZombies = document.getElementsByClassName("zmb");
             var newZombies = document.getElementsByClassName("newZmb");
+            var newZombies1 = document.getElementsByClassName("newZmb1");
 
             for (let i = 0; i < tempZombies.length; i++) {
                 var z = tempZombies[i];
@@ -85,6 +86,31 @@ $(document).keydown(function (e){
                     }
                 }
             }
+
+
+            for (let i = 0; i < newZombies1.length; i++) {
+                var tZmb1 = newZombies1[i];
+
+                if (z != undefined) {
+
+                    var bltPosition1 = bullet.getBoundingClientRect();
+                    var zmbPstn1 = tZmb1.getBoundingClientRect();
+
+
+                    if (bltPosition1.right <= zmbPstn1.right && bltPosition1.left >= zmbPstn1.left && bltPosition1.top >= zmbPstn1.top &&
+                        bltPosition1.bottom <= zmbPstn1.bottom) {
+
+                        tZmb1.style.top = "-115px";
+
+
+                        /*------------------------ScoreBoard-----------------------*/
+
+                        var score = parseInt($("#scoreBoard").val()) + 6;
+                        $("#scoreBoard").val(score);
+
+                    }
+                }
+            }
         });
     }
 });
@@ -108,10 +134,14 @@ var mveZmbInterval = setInterval(moveZombies,800);
 
 var count = 0;
 
+
+/*-------------------------Move Zombies Recruit------------------------*/
+
 function moveZombies(){
 
     var zombies = $(".zmb");
     var zombies1 = $(".newZmb");
+    var zombies2 = $(".newZmb1");
 
     for (let i = 0; i < zombies.length; i++) {
         var z = zombies[i];
@@ -154,6 +184,10 @@ function moveZombies(){
 
     }
 
+
+    /*-------------------------Move Zombies Regular------------------------*/
+
+
     for (let j = 0; j < zombies1.length; j++) {
         var tempZmb = zombies1[j];
 
@@ -190,5 +224,48 @@ function moveZombies(){
         }
 
     }
+
+
+
+    /*-------------------------Move Zombies Veteran------------------------*/
+
+
+    for (let j = 0; j < zombies2.length; j++) {
+        var tempZmb1 = zombies2[j];
+
+        var r = Math.floor((Math.random() * 50) + 1);
+
+        var tpZmb1 = $(tempZmb1).css('top');
+        var newTopZmb1 = parseInt(tpZmb1) + r;
+
+        $(tempZmb1).css('top',newTopZmb1 + "px");
+
+
+        if (newTopZmb1 > 712){
+            count++;
+
+            $(tempZmb1).css('top',"0px");
+
+            if (count == 1){
+                $("#hrt3").css('visibility','hidden');
+            }
+
+            if (count == 2){
+                $("#hrt2").css('visibility','hidden');
+            }
+
+
+            if (count == 3){
+                $("#hrt1").css('visibility','hidden');
+                zombieAudio.pause();
+                $("#GameOverTitle").css('display','block');
+                clearInterval(mveZmbInterval);
+                $(document).off('keypress');
+                $(document).off('keydown');
+            }
+        }
+
+    }
+
 }
 

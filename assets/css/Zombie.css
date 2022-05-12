@@ -34,10 +34,18 @@ main>.newZmb{
     display: none;
 }
 
+main>.newZmb1{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    display: none;
+}
+
 main>.newZmb>img{
     width: 80px;
     height: 115px;
 }
+
 
 /*-----------------------------------*/
 
@@ -81,4 +89,97 @@ body>main>div:nth-child(11){
 
 body>main>div:nth-child(12){
     left: 70vw;
+}
+
+body>main>div:nth-child(13){
+    left: 70vw;
+}
+
+body>main>div:nth-child(13)>img{
+    width: 115px;
+    height: 145px;
+    left: 70vw;
+}
+
+body>main>div:nth-child(14){
+    left: 20vw;
+}
+
+body>main>div:nth-child(14)>img{
+    width: 80px;
+    height: 115px;
+    left: 20vw;
+}
+
+body>main>div:nth-child(15){
+    left: 30vw;
+}
+
+body>main>div:nth-child(15)>img{
+    width: 80px;
+    height: 115px;
+    left: 20vw;
+}
+
+body>main>div:nth-child(16){
+    left: 56vw;
+}
+
+body>main>div:nth-child(16)>img{
+    width: 80px;
+    height: 115px;
+}
+
+body>main>div:nth-child(17){
+    left: 85vw;
+}
+
+body>main>div:nth-child(17)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(18){
+    left: 40vw;
+}
+
+body>main>div:nth-child(18)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(19){
+    left: 10vw;
+}
+
+body>main>div:nth-child(19)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(20){
+    left: 45vw;
+}
+
+body>main>div:nth-child(20)>img{
+    width: 80px;
+    height: 115px;
+}
+
+body>main>div:nth-child(21){
+    left: 65vw;
+}
+
+body>main>div:nth-child(21)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(22){
+    left: 5vw;
+}
+
+body>main>div:nth-child(22)>img{
+    width: 115px;
+    height: 145px;
 }

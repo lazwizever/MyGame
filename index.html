@@ -75,6 +75,45 @@
         <img src="assets/images/zombie3.png" alt="">
     </div>
 
+    <div id="zombie12" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie13" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
+    <div id="zombie14" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie1.png" alt="">
+    </div>
+
+    <div id="zombie15" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie1.png" alt="">
+    </div>
+
+    <div id="zombie16" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie17" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie18" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie19" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
+    <div id="zombie20" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie3.png" alt="">
+    </div>
+
+    <div id="zombie21" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
 
     <!----------------------------------------->
 
@@ -190,26 +229,30 @@
     var clicksId = 0;
 
    $("#btnRecruit").click(function (){
-       click.play();
+       /*click.play();*/
       clicksId = 1;
    });
 
     $("#btnRegular").click(function (){
-        click.play();
+       /* click.play();*/
         clicksId = 2;
     });
 
+    $("#btnVeteran").click(function (){
+        /* click.play();*/
+        clicksId = 3;
+    });
 
 
         $("#btnStart").click(function (){
             bckGrndMusic.pause();
-            click.play();
+            /*click.play();*/
 
-            var zmbMusic = document.createElement('audio');
+            /*var zmbMusic = document.createElement('audio');
             zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
-            /*zmbMusic.play();*/
+            zmbMusic.play();*/
 
-            if(clicksId ===1 || clicksId === 2){
+            if(clicksId ===1 || clicksId === 2 || clicksId ===3){
                 $("#homePageSection").css('display','none');
                 $("#gamePlaySection").css('display','none');
                 $("#scoreBoard").val("0");
@@ -220,11 +263,18 @@
                     $("#gamePlaySection").css('display','block');
                     $("#loadGameSection").css('display','none');
 
-                    /*zombieAudio.play();*/
+                    /*zombieAudio.play();
                     zombieAudio.loop = true;
                     zombieAudio.playbackRate = 1;
-                    zombieAudio.volume = 0.5;
+                    zombieAudio.volume = 0.5;*/
                 },5800);
+
+
+                if(clicksId === 3){
+                    $(".newZmb1").css('display','block');
+                    $(".newZmb").css('display','none');
+                    $(".zmb").css('display','none');
+                }
 
 
                 if(clicksId === 2){
