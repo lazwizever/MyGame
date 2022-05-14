@@ -173,10 +173,17 @@ function moveZombies(){
             if (count == 3){
                 $("#hrt1").css('visibility','hidden');
                 zombieAudio.pause();
-                $("#GameOverTitle").css('display','block');
                 clearInterval(mveZmbInterval);
                 $(document).off('keypress');
                 $(document).off('keydown');
+
+                var gameOver = document.createElement('audio');
+                gameOver.setAttribute('src','assets/audio/gameOverSound.wav');
+                gameOver.play();
+                $("#GameOverTitle").css('display','block');
+                $("#GameOverTitle").css('animation-name','gameOver');
+                $("#GameOverTitle").css('animation-duration','2s');
+
             }
         }
 
@@ -216,10 +223,15 @@ function moveZombies(){
             if (count == 3){
                 $("#hrt1").css('visibility','hidden');
                 zombieAudio.pause();
-                $("#GameOverTitle").css('display','block');
                 clearInterval(mveZmbInterval);
                 $(document).off('keypress');
                 $(document).off('keydown');
+
+                var gameOver = document.createElement('audio');
+                gameOver.setAttribute('src','assets/audio/gameOverSound.wav');
+                gameOver.play();
+
+                $("#GameOverTitle").css('display','block');
             }
         }
 
@@ -258,10 +270,14 @@ function moveZombies(){
             if (count == 3){
                 $("#hrt1").css('visibility','hidden');
                 zombieAudio.pause();
-                $("#GameOverTitle").css('display','block');
                 clearInterval(mveZmbInterval);
                 $(document).off('keypress');
                 $(document).off('keydown');
+
+                var gameOver = document.createElement('audio');
+                gameOver.setAttribute('src','assets/audio/gameOverSound.wav');
+                gameOver.play();
+                $("#GameOverTitle").css('display','block');
             }
         }
 

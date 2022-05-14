@@ -185,14 +185,31 @@ body{
     right: 4vw;
 }
 
+
+@keyframes gameOver {
+    from{
+        font-size: 0px;
+    }
+
+    to{
+      font-size: 20px;
+    }
+
+}
+
+
 #homePageSection>h3{
     position: absolute;
-    font-size: 20px;
+    font-size: 0px;
     color: #b62222;
     font-family: Exquisite Corpse;
     width: max-content;
     height: max-content;
     top: 77vh;
     left: 43vw;
+
+    /*animation-name: gameOver;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;*/
 }
 
