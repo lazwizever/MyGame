@@ -183,3 +183,32 @@ body>main>div:nth-child(22)>img{
     width: 115px;
     height: 145px;
 }
+
+
+body>main>div:nth-child(23){
+    left: 1vw;
+}
+
+body>main>div:nth-child(23)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(24){
+   left: 93vw;
+}
+
+body>main>div:nth-child(24)>img{
+    width: 115px;
+    height: 145px;
+}
+
+body>main>div:nth-child(25){
+    left: 35vw;
+}
+
+
+body>main>div:nth-child(25)>img{
+    width: 115px;
+    height: 145px;
+}

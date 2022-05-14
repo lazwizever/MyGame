@@ -115,6 +115,18 @@
         <img src="assets/images/zombie4.png" alt="">
     </div>
 
+    <div id="zombie22" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie23" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
+    <div id="zombie24" style="display: none" class="newZmb1">
+        <img src="assets/images/zombie4.png" alt="">
+    </div>
+
     <!----------------------------------------->
 
 
@@ -220,7 +232,7 @@
     /*-----------------------------------------------------------------------------*/
 
    $(window).on('load',function (){
-       /*bckGrndMusic.play();*/
+       bckGrndMusic.play();
    });
 
     $("#gamePlaySection").css('display','none');
@@ -229,64 +241,69 @@
     var clicksId = 0;
 
    $("#btnRecruit").click(function (){
-       /*click.play();*/
+       click.play();
       clicksId = 1;
+       $("#errorMessage").css('display','none');
    });
 
     $("#btnRegular").click(function (){
-       /* click.play();*/
+        click.play();
         clicksId = 2;
+        $("#errorMessage").css('display','none');
     });
 
     $("#btnVeteran").click(function (){
-        /* click.play();*/
+         click.play();
         clicksId = 3;
+        $("#errorMessage").css('display','none');
     });
 
 
-        $("#btnStart").click(function (){
-            bckGrndMusic.pause();
-            /*click.play();*/
+        $("#btnStart").click(function () {
 
-            /*var zmbMusic = document.createElement('audio');
-            zmbMusic.setAttribute('src','assets/audio/zombieMusic.mp3');
-            zmbMusic.play();*/
+            console.log(clicksId);
 
-            if(clicksId ===1 || clicksId === 2 || clicksId ===3){
-                $("#homePageSection").css('display','none');
-                $("#gamePlaySection").css('display','none');
+            if (clicksId == 1 | clicksId == 2 | clicksId == 3) {
+                $("#homePageSection").css('display', 'none');
+                $("#gamePlaySection").css('display', 'none');
                 $("#scoreBoard").val("0");
-                $("#loadGameSection").css('display','block');
+                $("#loadGameSection").css('display', 'block');
 
+                var zmbMusic = document.createElement('audio');
+                zmbMusic.setAttribute('src', 'assets/audio/zombieMusic.mp3');
+                zmbMusic.play();
+
+                bckGrndMusic.pause();
+                click.play();
 
                 setTimeout(() => {
-                    $("#gamePlaySection").css('display','block');
-                    $("#loadGameSection").css('display','none');
+                    $("#gamePlaySection").css('display', 'block');
+                    $("#loadGameSection").css('display', 'none');
 
-                    /*zombieAudio.play();
+                    zombieAudio.play();
                     zombieAudio.loop = true;
                     zombieAudio.playbackRate = 1;
-                    zombieAudio.volume = 0.5;*/
-                },5800);
+                    zombieAudio.volume = 0.5;
+                }, 5800);
 
 
-                if(clicksId === 3){
-                    $(".newZmb1").css('display','block');
-                    $(".newZmb").css('display','none');
-                    $(".zmb").css('display','none');
+                if (clicksId === 3) {
+                    $(".newZmb1").css('display', 'block');
+                    $(".newZmb").css('display', 'none');
+                    $(".zmb").css('display', 'none');
                 }
 
 
-                if(clicksId === 2){
-                    $(".newZmb").css('display','block');
+                if (clicksId === 2) {
+                    $(".newZmb").css('display', 'block');
                 }
 
-                if(clicksId === 1){
-                    $(".newZmb").css('display','none');
+                if (clicksId === 1) {
+                    $(".newZmb").css('display', 'none');
                 }
 
-            }else {
-                $("#errorMessage").css('display','block');
+            } else {
+                $("#errorMessage").css('display', 'block');
                 $("#btnStart").off('click');
             }
 

@@ -122,9 +122,9 @@ $(document).keydown(function (e){
 
 $(document).keypress(function (e){
     if (e.keyCode ===32 && e.keyCode !=12){
-       /* var shoot = document.createElement('audio');
+        var shoot = document.createElement('audio');
         shoot.setAttribute('src','assets/audio/laserGun.mp3');
-        shoot.play();*/
+        shoot.play();
     }
 
 });
